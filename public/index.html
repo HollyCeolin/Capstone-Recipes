@@ -6,18 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundations Capstone</title>
-    <link rel="stylesheet" href="/css"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<div>
-  <h1>From Babies & Dogs to Baking & Desserts</h1>
-</div>
+  <h1>Welcome!  Where would you like to start?</h1>
+  <div id="recipe-container"> </div>
 
-  
+  <button class="all">All Recipes</button><br><br>
+  <br>
+  <button class="edit">Edit Recipe</button><br><br>
+  <br>
+  <button class="delete">Delete a Recipe</button><br><br>
+  <br>
+  <button class="add">Add a New Recipe</button> <br><br>
 
-</main>
+  <form id="Add-recipe">
+      <input type="text" id="recipe-to-add" placeholder="Enter recipe name" required>
+      <input type="text" id="type" placeholder="What is the meal type?" required>
+      <input type="text" id="ingredients" placeholder="Enter the ingredients" required><input type="text" id="directions" placeholder="Enter the directions" required> <BR></BR>
+      <button>Add Recipe</button>
+    </form>
+
+    <script>
+
+    </script>
+
+
+    
+
+
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+<script src="/js"></script>
 </body>
 </html>
