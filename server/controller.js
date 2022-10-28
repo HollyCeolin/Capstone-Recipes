@@ -20,20 +20,23 @@ module.exports ={
         
     deleteRecipe: (req, res) => {
             let index = recipes.findIndex(elem => elem.id === +req.params.id)
+            console.log(req.params.id)
             recipes.splice(index, 1)
             res.status(200).send(recipes)
+
         },
 
     
-    createRecipe: (req, res) => {
+
+   
+    addNewRecipe: (req, res) => {
         let {recipeName, mealType, ingredients, directions} = req.body
         let newRecipe = {
             id:newId,
             recipeName,
             mealType,
             ingredients,
-            directions
-            
+            directions    
         }
         recipes.push(newRecipe)
         res.status(200).send(recipes)

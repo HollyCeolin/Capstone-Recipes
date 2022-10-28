@@ -10,11 +10,11 @@ const errCallback = err => console.log(err)
 const getAllRecipes = () => axios.get(baseURL).then(recipeCallback).catch(errCallback)
 
 
-const createRecipe = body => axios.post(baseURL, body).then(recipeCallback).catch(errCallback)
+ const addNewRecipe = body => axios.post(baseURL, body).then(recipeCallback).catch(errCallback)
 
-// const deleteRecipe = id => axios.delete(`${baseURL}/${id}`).then(recipeCallback).catch(errCallback)
+ const deleteRecipe = id => axios.delete(`${baseURL}/${id}`).then(recipeCallback).catch(errCallback)
 
-// const updateRecipe = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(recipeCallback).catch(errCallback)
+ const updateRecipe = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(recipeCallback).catch(errCallback)
 
 function submitHandler(e) {
     e.preventDefault()
@@ -23,6 +23,7 @@ let recipeName = document.querySelector('#recipe-name')
 let ingredients = document.querySelector('input[name="ingredients"]')
 let directions = document.querySelector('input[name="directions"]')
 let mealType = document.querySelector('input [name="meal-type"]')
+
 
 
 let recipeObj = {
@@ -39,10 +40,15 @@ let recipeObj = {
     directions.value = ''
 }
 
+function AddRecipe(recipe) {
+    const newRecipe = document.createElement('div')
+    newRecipe.classList.add('New-Recipe')
+
+    newRecipe.innerHTML = `<p class ="recipe-title">${recipe.recipeName}</p>`
+}
 
 
-
-
+    // getAllRecipes()
 
 
 
@@ -63,7 +69,7 @@ const displayRecipe = arr => {
         let idText = document.createElement('span')
 
          recipeItem.id = id
-        recipeItem.addEventListener('click', deleteRecipe)
+         recipeItem.addEventListener('click', addNewRecipe)
 
         recipeNameText.textContent = recipeName
         recipeName.id = id
@@ -94,6 +100,7 @@ const displayRecipe = arr => {
 }
 let allRecipes = document.querySelector('.all')
 allRecipes.addEventListener('click', getAllRecipes)
-
-let addRecipe = document.querySelector('.add')
-addRecipe.addEventListener('click', createRecipe)
+let deleteARecipe = document.querySelector('.delete')
+deleteARecipe.addEventListener('click', deleteRecipe)
+let newRecipe = document.querySelector('.AddNewRecipe')
+newRecipe.addEventListener('click', addNewRecipe)

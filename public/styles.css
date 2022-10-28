@@ -1,51 +1,67 @@
-input {
-    font-weight: bolder;
-    
 
-}
 button {
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 25px 47px;
     text-align: center;
     text-decoration: none;
-    display:grid;
-    font-size: 12px;
+    display: inline;
+    font-size: 18px;
     transition-duration: 0.4s;
     background-color: white;
     color: black;
     border: 2px solid #008CBA;
-  }
+    display: inline-block;
+    font-weight: bolder;
+    
+    text-align: center;
+}
 
 button:hover {
     background-color: #008CBA;
     color: white;
 }
 
-button5 {
-    border: none;
-    color: white;
-    padding: 5px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    transition-duration: 0.4s;
-    background-color: white;
-    color: black;
-    border: 2px solid #008CBA; 
-}
 
 form {
     border: none;
     color: white;
-    padding: 5px 16px;
+    padding: 10px 16px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline-table;
     font-size: 12px;
     transition-duration: 0.4s;
     background-color: white;
-    color: black;
+    color: #008CBA;
     border: 2px solid #008CBA;
+    text-align: center;
+    
+}
+
+input{
+    padding: 20px 32px;
+    font-style: italic;
+    font-size: medium;
+    border-color: #008CBA;
+    text-align: center;
+   
+    
+}
+
+h1{
+   
+    align-items: center;
+    color: #008CBA;
+    font-weight: bolder;
+    text-align: center;
+}
+
+h2{
+    
+    align-items: center;
+    color: #008CBA;
+    font-weight: bolder;
+    text-align: center;
+    
 }
