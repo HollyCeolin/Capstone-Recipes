@@ -1,43 +1,38 @@
-//add event listeners go here
+
 const baseURL = `http://localhost:5000/api/recipe`
 
 
 
-const recipeContainer = document.querySelector('#recipe-container')
+const recipeContainer = document.querySelector('.recipe-container')
 const recipeCallback = ({ data: recipe }) => displayRecipe(recipe)
 const errCallback = err => console.log(err)
 
-const getAllRecipes = () => axios.get(baseURL).then(recipeCallback).catch(errCallback)
+let recipeName = document.querySelector('#recipe-to-add')
+let ingredients = document.querySelector('#ingredients')
+let directions = document.querySelector('#directions')
+let mealType = document.querySelector('#type')
+
+const getRecipes = () => axios.get(baseURL).then(recipeCallback).catch(errCallback)
 
 
  const addNewRecipe = body => axios.post(baseURL, body).then(recipeCallback).catch(errCallback)
 
- const deleteRecipe = id => axios.delete(`${baseURL}/${id}`).then(recipeCallback).catch(errCallback)
 
- const updateRecipe = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(recipeCallback).catch(errCallback)
+// const updateRecipe = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(recipeCallback).catch(errCallback)
 
 function submitHandler(e) {
     e.preventDefault()
-
-let recipeName = document.querySelector('#recipe-name')
-let ingredients = document.querySelector('input[name="ingredients"]')
-let directions = document.querySelector('input[name="directions"]')
-let mealType = document.querySelector('input [name="meal-type"]')
-
 
 
 let recipeObj = {
     recipeName: recipeName.value,
     mealType: mealType.value,
     ingredients: ingredients.value,
-    directions: directions.value 
+    directions: directions.value, 
+    
 }
-    createRecipe(recipeObj)
-
-    recipeName.value = ''
-    mealType.value = ''
-    ingredients.value = ''
-    directions.value = ''
+    addNewRecipe(recipeObj)
+    
 }
 
 function AddRecipe(recipe) {
@@ -47,26 +42,24 @@ function AddRecipe(recipe) {
     newRecipe.innerHTML = `<p class ="recipe-title">${recipe.recipeName}</p>`
 }
 
-
-    // getAllRecipes()
-
-
-
-
-
-
-
 const displayRecipe = arr => {
     recipeContainer.innerHTML = ''
     let newRecipe = document.createElement('ul')
     arr.forEach(recipeObj => {
-        let {id, recipeName, mealType, ingredients, directions} = recipeObj
+        let {id, recipeName, mealType, ingredients, directions,} = recipeObj
         let recipeItem = document.createElement('li')
-        let recipeNameText = document.createElement('span')
-        let mealTypeText = document.createElement('span')
-        let ingredientsText = document.createElement('span')
-        let directionsText = document.createElement('span')
+        let recipeNameText = document.createElement('li')
+        let mealTypeText = document.createElement('li')
+        let ingredientsText = document.createElement('li')
+        let directionsText = document.createElement('li')
         let idText = document.createElement('span')
+        
+        recipeNameText.setAttribute('id', 'title');
+        mealTypeText.setAttribute('id', 'meal');
+        ingredientsText.setAttribute('id', 'ing');
+        directionsText.setAttribute('id', 'dir');
+
+       
 
          recipeItem.id = id
          recipeItem.addEventListener('click', addNewRecipe)
@@ -98,9 +91,17 @@ const displayRecipe = arr => {
     });
 
 }
-let allRecipes = document.querySelector('.all')
-allRecipes.addEventListener('click', getAllRecipes)
-let deleteARecipe = document.querySelector('.delete')
-deleteARecipe.addEventListener('click', deleteRecipe)
-let newRecipe = document.querySelector('.AddNewRecipe')
-newRecipe.addEventListener('click', addNewRecipe)
+
+
+let allRecipes = document.getElementById('all')
+allRecipes.addEventListener('click', getRecipes)
+
+let newRecipe = document.getElementById('submit')
+newRecipe.addEventListener('click', submitHandler)
+// let update = document.querySelector('.edit')
+// update.addEventListener('click', updateRecipe)
+
+
+
+
+ 

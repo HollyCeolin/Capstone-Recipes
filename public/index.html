@@ -9,34 +9,60 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <h1>Recipes For Everyone in Your Family</h1>
-    <h2>(Including the Dog!)</h2>
-  <div id="recipe-container"> </div>
-
-  <button class="all">See All <br> Recipes</button><br><br>
-  <br>
-  <button class="edit">Edit <br> Recipe</button><br><br>
-  <br>
-  <button class="delete">Delete a <br> 
-    Recipe</button><br><br>
-  <br>
-  <form id="Add-recipe">
-      <input type="text" id="recipe-to-add" placeholder="Recipe Name" required>
-      <input type="text" id="type" placeholder=" Meal Type" required><br><br>
-      <input type="text" id="ingredients" placeholder="Ingredients" required><input type="text" id="directions" placeholder="Directions" required> <BR></BR>
-      <button class="AddNewRecipe">Add Recipe</button>
-    </form>
-
-    <script>
-
-    </script>
-
+  <nav>
+    <a class="nvg" href="/">Home</a>
+    <a class="nvg" href="/recipes">See All Recipes</a>
+    <a class="nvg" href="/add">Add a New Recipe</a>
+  </nav>
+  <h1>Recipes For Everyone in Your Family
+            (Including your Dog!)
+  </h1>
+    
+  <div class="recipe-container"> </div>
+  <div class="row">
+    <div class="column">
+      
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuouim4CtRWChkD0qhZFrmSHinwmswdJ0Q1w&usqp=CAU">
+      
+      <a href="/recipes">
+      <img src="https://www.onehappyhousewife.com/wp-content/uploads/2019/08/chewy-chocolate-chip-cookies-15-20211203-900x900.jpg">
+      </a>
+      <img src="./img/Vegan-Brigadeiro-vegan-chocolate-truffle-11-500x500.jpeg">
+      <img src="https://thecozycook.com/wp-content/uploads/2018/02/Strawberry-Banana-Oat-Dog-Treat--700x1050.jpg">
+      <img id="bruce" id="dog" src= "./img/Capstone Recipes - 2 of 9.png">
+      <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-14362_11-f85caa7.jpg">
+      <img src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_auto:100,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_auto,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-beef-enchiladas.jpg%3Frev%3D5d01153a5d4e4e5bace661327f90099d">
+    </div>
+    <div class="column">
+      <img src="https://www.thecookierookie.com/wp-content/uploads/2013/12/dog-treat-recipe-7.jpg">
+      <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-14362_11-f85caa7.jpg">
+      <img src="https://sharpaspirant.com/wp-content/uploads/2021/04/mississippi-roast-10-500x500.jpg">
+      <img id="noodles"src="./img/Capstone Recipes - 4 of 6.png">
+      <img src="https://blog.amigofoods.com/wp-content/uploads/2019/07/brigadeiro.png">
+      <img src="./img/Capstone Recipes - 3 of 6.png" >
+      <a href="/add">
+      <button id="home-new" >Add New <br> Recipe</button>
+    </a>
+      
+      <button id="all" >See All <br> Recipes </button>
+    </a>
+    </div>
+    <div class="column">
+      <img id="oven"src="./img/Capstone Recipes - 9 of 9.png">
+      <img src="https://www.thespruceeats.com/thmb/OnwvqaCO9b1qp1u322XW4TZAIkE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/instant-pot-beef-stew-5218740-hero-05-ee714d6ec6ca45c2aef9a83181944c3d.jpg">
+      <img src="https://www.onehappyhousewife.com/wp-content/uploads/2019/08/chewy-chocolate-chip-cookies-15-20211203-900x900.jpg">
+      <img src="https://www.thecookierookie.com/wp-content/uploads/2013/12/dog-treat-recipe-7.jpg">
+      <img id="tux"src="./img/Capstone Recipes - 1 of 9.png">      
+      <img src="https://www.onehappyhousewife.com/wp-content/uploads/2019/08/chewy-chocolate-chip-cookies-15-20211203-900x900.jpg">
+      <img src="https://www.wilton.com/dw/image/v2/AAWA_PRD/on/demandware.static/-/Sites-wilton-project-master/default/dw037a9445/images/project/WLRECIP-8796/BaScReAdIn_52110-01.jpg?sw=800&sh=800">
+    </div>
 
     
+  </div>    
 
 
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="/js"></script>
+<script src="main.js"></script>
 </body>
 </html>

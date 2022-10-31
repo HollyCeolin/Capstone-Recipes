@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Add a Recipe</title>
+</head>
+
+<body id="addhtml" >
+
+    <nav>
+        <a class="nvg" href="/">Home</a>
+    <a class="nvg" href="/recipes">See All Recipes</a>
+    <a class="nvg" href="/add">Add a New Recipe</a>
+      </nav>
+
+      
+
+      </style>
+
+      <!-- <form id="Add-recipe">
+        <input type="text" id="recipe-to-add" placeholder="Recipe Name" required>
+        <input type="text" id="type" placeholder=" Meal Type" required>
+        <input type="text" id="ingredients" placeholder="Ingredients" required><input type="text" id="directions" placeholder="Directions" required> <BR></BR>
+        <button class="AddNewRecipe">Add Recipe</button>
+      </form> -->
+
+      <form id="new-add"></form>
+        <label for="recipe-name">New Recipe Name:</label><br>
+        <input type="text" id="recipe-name" name="recipe-name" value=""><br>
+        <label for="meal-type">Meal Type:</label><br>
+        <input type="text" id="meal-type" name="meal-type" value=""><br><br>
+        <label for="ingredients">Ingredients:</label><br>
+        <input type="text" id="ingredients" name="ingredients" value=""><br><br>
+        <label for="directions">Directions:</label><br>
+        <input type="text" id="directions" name="directions" value=""><br><br>
+        <a href="/recipes">
+        <button class="all" id="all-recipes" >See All <br> Recipes </button>
+            </a>
+            <a href="/recipes">
+            <button id="new-addition" >Add New <br> Recipe</button>
+        </a>
+    </form>
+
+
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="main.js"></script>
+    </body>
+</html>
